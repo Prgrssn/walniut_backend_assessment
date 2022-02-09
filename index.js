@@ -8,17 +8,17 @@ const app = express();
 let posts = [];
 const tags = ["tech", "science", "health", "history"];
 
-// (async function () {
-//   await Promise.all(
-//     tags.map(async (tag) => {
-//       const response = await fetch(
-// `https://api.hatchways.io/assessment/blog/posts?${tag}`
-//       );
-//       const post = await response.json();
-//       console.log(typeof response);
-//     })
-//   );
-// });
+(async function () {
+  await Promise.all(
+    tags.map(async (tag) => {
+      const response = await fetch(
+        `https://api.hatchways.io/assessment/blog/posts?${tag}`
+      );
+      const post = await response.json();
+      console.log(post);
+    })
+  );
+});
 
 function getPosts() {
   tags.map((tag) => {
